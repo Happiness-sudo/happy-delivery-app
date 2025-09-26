@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Delivery App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Happy Delivery App</h1>
+    <nav>
+      <button id="loadProducts">Load Products</button>
+      <button id="viewCart">View Cart (<span id="cartCount">0</span>)</button>
+      <button id="viewRider">Rider</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="products"></section>
+  </main>
+
+  <!-- Cart Section -->
+  <section id="cartSection" class="hidden">
+    <h2>Your Cart</h2>
+    <ul id="cartItems"></ul>
+    <p id="cartTotal">Total: Ksh 0</p>
+    <button id="closeCart">Close</button>
+  </section>
+
+  <!-- Rider Section -->
+  <section id="riderSection" class="hidden">
+    <h2>Rider Dashboard</h2>
+    <ul id="riderOrders"></ul>
+    <p id="riderEarnings">Total Earnings: Ksh 0</p>
+    <button id="closeRider">Close</button>
+  </section>
+
+  <footer>
+    <p>© 2025 Happy Delivery. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

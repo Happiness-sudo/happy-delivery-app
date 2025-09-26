@@ -1,0 +1,15 @@
+{
+  "users": [
+    { "id": 1, "name": "Happiness Ngeete", "email": "ndolohappiness@gmail.com", "role": "admin" },
+    { "id": 2, "name": "Rider John", "email": "rider@example.com", "role": "rider" },
+    { "id": 3, "name": "Customer Jane", "email": "jane@example.com", "role": "user" }
+  ],
+  "products": [
+    { "id": 1, "name": "Milk", "price": 50 },
+    { "id": 2, "name": "Bread", "price": 40 },
+    { "id": 3, "name": "Sugar", "price": 100 }
+  ],
+  "orders": [
+    { "id": 1, "userId": 3, "productId": 2, "status": "pending" }
+  ]
+}
