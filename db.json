@@ -1,0 +1,50 @@
+{
+  "menu": [
+    {
+      "id": 1,
+      "name": "Cheeseburger",
+      "price": 450,
+      "image": "https://i.imgur.com/8Km9tLL.jpg",
+      "description": "Juicy beef patty with cheese, lettuce, and tomato."
+    },
+    {
+      "id": 2,
+      "name": "Margherita Pizza",
+      "price": 950,
+      "image": "https://i.imgur.com/eTmWoAN.png",
+      "description": "Classic pizza with tomato sauce, mozzarella, and basil."
+    },
+    {
+      "id": 3,
+      "name": "Chicken Wrap",
+      "price": 600,
+      "image": "https://i.imgur.com/4A8mO6W.jpg",
+      "description": "Grilled chicken with veggies wrapped in soft tortilla."
+    },
+    {
+      "id": 4,
+      "name": "Fries Combo",
+      "price": 350,
+      "image": "https://i.imgur.com/Qd7YBcb.jpg",
+      "description": "Crispy golden fries served with ketchup and mayo."
+    },
+    {
+      "id": 5,
+      "name": "Fresh Juice",
+      "price": 250,
+      "image": "https://i.imgur.com/RoYf4HP.jpg",
+      "description": "Cold-pressed orange juice — pure and refreshing."
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "name":"Fresh Juice",
+      "price": 250,
+      "image": "https://i.imgur.com/RoYf4HP.jpg",
+      "description":"fresh",
+      "time":"8:30pm"
+  
+    }
+  ]
+}

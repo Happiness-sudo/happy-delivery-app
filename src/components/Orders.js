@@ -1,22 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { ListGroup, Container } from "react-bootstrap";
 
 function Orders() {
-  const orders = [
-    { id: 1, name: "Happiness", item: "Pizza", deliveryGuy: "John", status: "Pending" },
-  ];
+  const [orders, setOrders] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/orders")
+      .then(res => res.json())
+      .then(data => setOrders(data))
+      .catch(console.error);
+  }, []);
 
   return (
-    <div className="page orders">
-      <h1>My Orders</h1>
-      {orders.map((o) => (
-        <div key={o.id} className="order-card">
-          <h3>{o.item}</h3>
-          <p><b>Customer:</b> {o.name}</p>
-          <p><b>Delivery Guy:</b> {o.deliveryGuy}</p>
-          <p><b>Status:</b> {o.status}</p>
-        </div>
-      ))}
-    </div>
+   <Container className="mt-4">
+   <h3>My Orders</h3>
+    <ListGroup>
+    {orders.map(order => (
+       <ListGroup.Item key={order.id}>
+    {order.item} - ${order.price} at {order.time} 
+     </ListGroup.Item>
+        ))}
+    </ListGroup>
+    </Container>
   );
 }
 

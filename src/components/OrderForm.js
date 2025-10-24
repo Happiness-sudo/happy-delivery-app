@@ -1,34 +1,53 @@
 import React, { useState } from "react";
+import { Modal, Button, Form } from "react-bootstrap";
 
-function OrderForm() {
-  const [form, setForm] = useState({ name: "", item: "", address: "", deliveryGuy: "" });
+function OrderForm({ show, onHide, item }) {
+  const [customerName, setCustomerName] = useState("");
 
-  function handleChange(e) {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  }
-
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    alert("✅ Order placed successfully!");
-    setForm({ name: "", item: "", address: "", deliveryGuy: "" });
-  }
+    const newOrder = {
+      itemId: item.id,
+      customerName,
+      status: "Pending",
+    };
+
+    fetch("http://localhost:3000/orders", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newOrder),
+    })
+      .then((res) => res.json())
+      .then(() => {
+        alert("Order placed successfully!");
+        onHide();
+      })
+      .catch((err) => console.error("Error posting order:", err));
+  };
 
   return (
-    <div className="page order-form">
-      <h1>Place Your Order</h1>
-      <form onSubmit={handleSubmit} className="form">
-        <input name="name" value={form.name} onChange={handleChange} placeholder="Your Name" required />
-        <input name="item" value={form.item} onChange={handleChange} placeholder="Item Name" required />
-        <input name="address" value={form.address} onChange={handleChange} placeholder="Delivery Address" required />
-        <select name="deliveryGuy" value={form.deliveryGuy} onChange={handleChange} required>
-          <option value="">Choose Delivery Guy</option>
-          <option value="John">John</option>
-          <option value="Mary">Mary</option>
-          <option value="Ahmed">Ahmed</option>
-        </select>
-        <button type="submit" className="cta-btn">Submit Order</button>
-      </form>
-    </div>
+    // <Modal show={show} onHide={onHide} centered>
+    //   <Modal.Header closeButton>
+    //     <Modal.Title>Order: {item?.name}</Modal.Title>
+    //   </Modal.Header>
+    //   <Modal.Body>
+        <Form onSubmit={handleSubmit}>
+    <Form.Group controlId="formName" className="mb-3">
+    <Form.Label>Your Name</Form.Label>
+     <Form.Control
+       type="text"
+    value={customerName}
+    onChange={(e) => setCustomerName(e.target.value)}
+         required
+            />
+     </Form.Group>
+       <Button variant="success" type="submit" className="w-100">
+            Submit Order
+      </Button>
+     </Form>
+    //   </Modal.Body>
+    // </Modal>
+    
   );
 }
 
