@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+HappyDelivery Kenya
+Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+HappyDelivery Kenya is a single-page food delivery web application built with React. The app allows users to browse available food items, place delivery orders, and view their pending orders. It uses a json-server as a mock backend for managing item and order data.
 
-## Available Scripts
+Features
 
-In the project directory, you can run:
+Single Page Application built with Create React App
 
-### `npm start`
+Displays a list of food items fetched from a REST API
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Allows users to place new delivery orders using a controlled form
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Displays a list of all orders made by the user
 
-### `npm test`
+Supports deleting a pending order
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Includes navigation with React Router for smooth page transitions
 
-### `npm run build`
+Styled using React Bootstrap and Bootswatch theme for an appealing UI
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Technologies Used
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+React (Frontend)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+React Router (Routing)
 
-### `npm run eject`
+React Bootstrap / Bootswatch (Styling)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+JSON Server (Mock backend)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+JavaScript (ES6+)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+HTML5 & CSS3
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Project Structure
+src/
+├── components/
+│   ├── Navbar.js
+│   ├── Home.js
+│   ├── ItemList.js
+│   ├── ItemCard.js
+│   ├── OrderForm.js
+│   └── Orders.js
+├── App.js
+├── index.js
+└── index.css
+db.json
 
-## Learn More
+API Routes (json-server)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The backend is powered by json-server and provides the following RESTful routes:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+GET /items - Fetch all available items
 
-### Code Splitting
+POST /orders - Add a new order
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+GET /orders - Fetch all orders
 
-### Analyzing the Bundle Size
+DELETE /orders/:id - Delete an order by ID
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Running the Application
 
-### Making a Progressive Web App
+Start the JSON Server:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+npx json-server --watch db.json --port 5000
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Start the React App:
 
-### Deployment
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+Open your browser and visit:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+http://localhost:3000
+
+Requirements Fulfilled
+
+Single Page Application with Create React App
+
+At least five React components
+
+At least three client-side routes
+
+Controlled form for POST requests
+
+GET, POST, and DELETE requests using json-server
+
+Dynamic state updates upon successful POST
+
+Custom styling using a UI framework
+
+Author
+
+Developed by Happiness Ngeete<Github- Happiness-sudo>
