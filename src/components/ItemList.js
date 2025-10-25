@@ -1,22 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ItemCard from "./ItemCard";
+import OrderForm from "./OrderForm";
+import { Container, Row, Col } from "react-bootstrap";
 
 function ItemList() {
-  const items = [
-    { id: 1, name: "Tasty Pizza", price: "Ksh 450", img: "https://i.imgur.com/BJcL7xC.png" },
-    { id: 2, name: "Juicy Burger", price: "Ksh 350", img: "https://i.imgur.com/2uX8D9K.png" },
-    { id: 3, name: "Fresh Salad", price: "Ksh 250", img: "https://i.imgur.com/gd1CztF.png" },
-  ];
+  const [items, setItems] = useState([]);
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [showForm, setShowForm] = useState(false);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/items")
+      .then((res) => res.json())
+      .then((data) => setItems(data))
+      .catch(console.error);
+  }, []);
+
+  const handleOrderNow = (item) => {
+    setSelectedItem(item);
+    setShowForm(true);
+  };
 
   return (
-    <div className="page item-list">
-      <h1>Available Items</h1>
-      <div className="items-container">
+    <Container className="mt-4">
+      <Row>
         {items.map((item) => (
-          <ItemCard key={item.id} item={item} />
+          <Col key={item.id} md={4}>
+            <ItemCard item={item} onOrderNow={handleOrderNow} />
+          </Col>
         ))}
-      </div>
-    </div>
+      </Row>
+
+      {/* Order Form Modal */}
+      {showForm && (
+        <OrderForm
+          show={showForm}
+          onHide={() => setShowForm(false)}
+          item={selectedItem}
+        />
+      )}
+    </Container>
   );
 }
 

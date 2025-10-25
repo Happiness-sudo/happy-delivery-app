@@ -1,14 +1,19 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-function ItemCard({ item }) {
-  let navigate=useNavigate()
+import { Card, Button } from "react-bootstrap";
+
+function ItemCard({ item, onOrderNow }) {
   return (
-    <div className="item-card">
-      <img src={item.img} alt={item.name} />
-      <h3>{item.name}</h3>
-      <p>{item.price}</p>
-      <button onClick={()=>navigate("/order")} className="order-btn">Order Now</button>
-    </div>
+    <Card className="m-3 shadow-sm" style={{ width: "18rem" }}>
+      <Card.Img variant="top" src={item.image} />
+      <Card.Body>
+        <Card.Title>{item.name}</Card.Title>
+        <Card.Text>{item.description}</Card.Text>
+        <Card.Text><strong>Price:</strong> Ksh {item.price}</Card.Text>
+        <Button variant="success" onClick={() => onOrderNow(item)}>
+          Order Now
+        </Button>
+      </Card.Body>
+    </Card>
   );
 }
 
