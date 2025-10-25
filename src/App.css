@@ -1,0 +1,60 @@
+/* === Custom Styling (Safe to Add) === */
+body {
+  background-color: #f8f9fa;
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar {
+  background-color: #198754 !important;
+  color: white !important;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  color: white !important;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.nav-link {
+  color: #ffffffcc !important;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #fff !important;
+}
+
+.card {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.modal-content {
+  border-radius: 12px;
+}
+
+.btn-primary {
+  background-color: #198754 !important;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #157347 !important;
+}
+
+.container h3 {
+  color: #333;
+  margin-bottom: 1.5rem;
+}

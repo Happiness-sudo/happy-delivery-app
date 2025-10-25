@@ -28,6 +28,33 @@
       "address": "Juja",
       "item": "Cheeseburger",
       "status": "Pending"
+    },
+    {
+      "id": "e2f0",
+      "itemId": "2",
+      "customerName": "John",
+      "deliveryGuy": "eric",
+      "address": "Juja",
+      "item": "Fries",
+      "status": "Pending"
+    },
+    {
+      "id": "019d",
+      "itemId": "1",
+      "customerName": "John gh",
+      "deliveryGuy": "derik",
+      "address": "kasarani",
+      "item": "Fries",
+      "status": "Pending"
+    },
+    {
+      "id": "224a",
+      "itemId": "2",
+      "customerName": "Judy",
+      "deliveryGuy": "Neddy",
+      "address": "Tatu city",
+      "item": "Fries",
+      "status": "Pending"
     }
   ]
 }
